@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  toilet-tracker-backend:
+    image: python:3.11
+    container_name: toilet_tracker_backend
+    working_dir: /app
+    volumes:
+      - ./backend:/app
+    command: bash -c "pip install -r requirements.txt && uvicorn app:app --host 0.0.0.0 --port 8000"
+    ports:
+      - "8000:8000"
+    restart: unless-stopped
+
+  toilet-tracker-frontend:
+    image: nginx:alpine
+    container_name: toilet_tracker_frontend
+    volumes:
+      - ./frontend:/usr/share/nginx/html:ro
+    ports:
+      - "5001:80"
+    restart: unless-stopped
+
+  toilet-tracker-db:
+    image: postgres:15
+    container_name: toilet_tracker_db
+    environment:
+      POSTGRES_USER: tracker
+      POSTGRES_PASSWORD: trackerpass
+      POSTGRES_DB: toilet_data
+    volumes:
+      - toilet_tracker_db:/var/lib/postgresql/data
+    restart: unless-stopped
+
+volumes:
+  toilet_tracker_db:
