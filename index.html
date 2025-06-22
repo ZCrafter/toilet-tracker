@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Toilet Tracker</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background-color: #121212;
+      color: white;
+    }
+    .container {
+      max-width: 400px;
+      margin: auto;
+      padding: 10px;
+    }
+    h2 {
+      margin-top: 20px;
+    }
+    select, input, button {
+      width: 100%;
+      padding: 10px;
+      margin: 5px 0;
+      border-radius: 6px;
+      border: none;
+    }
+    .pee { background: #ffeb3b; color: black; }
+    .poo { background: #795548; color: white; }
+    .sum { background: #9e9e9e; color: black; }
+    .dark-toggle {
+      text-align: right;
+      font-size: 0.8rem;
+    }
+    .hidden { display: none; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="dark-toggle">
+      <label><input type="checkbox" id="darkToggle" checked> Dark Mode</label>
+    </div>
+    <h2>Toilet Entry</h2>
+    <select id="type">
+      <option value="pee">Pee</option>
+      <option value="poo">Poo</option>
+      <option value="sum">Sum</option>
+    </select>
+    <div id="locationFields">
+      <select id="location">
+        <option value="Home">Home</option>
+        <option value="Work">Work</option>
+        <option value="Other">Other</option>
+      </select>
+    </div>
+    <div id="sumFields" class="hidden">
+      <label><input type="checkbox" id="vr"> VR?</label>
+      <input type="text" id="name1" placeholder="Name 1">
+      <input type="text" id="name2" placeholder="Name 2">
+      <input type="text" id="name3" placeholder="Name 3">
+    </div>
+    <button id="submit" class="pee">Submit</button>
+    <h2>Stats</h2>
+    <div id="stats"></div>
+    <button id="toggleSumStats">Show Sum Stats</button>
+    <div id="sumStats" class="hidden"></div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
