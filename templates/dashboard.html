@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+  <header>
+    <h1>Stats</h1>
+    <button id="theme-toggle">🌙</button>
+    <a href="/" class="dash-link">Log</a>
+  </header>
+  <main>
+    <section id="pee-stats">
+      <h2>Pee</h2>
+      <p>Average interval: <span id="pee-avg-interval">–</span></p>
+      <p>Daily average: <span id="pee-daily-avg">–</span></p>
+      <ul id="pee-list"></ul>
+    </section>
+
+    <section id="poop-stats">
+      <h2>Poop</h2>
+      <p>Average interval: <span id="poop-avg-interval">–</span></p>
+      <p>Daily average: <span id="poop-daily-avg">–</span></p>
+      <ul id="poop-list"></ul>
+    </section>
+
+    <section id="sum-stats">
+      <button id="toggle-sum">Show Sum Stats</button>
+      <div id="sum-content" class="hidden">
+        <h2>Sum Names</h2>
+        <ul id="sum-list"></ul>
+      </div>
+    </section>
+  </main>
+  <script src="/static/js/script.js"></script>
+</body>
+</html>
