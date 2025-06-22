@@ -1,0 +1,12 @@
+# docker-compose.yml
+version: '3.8'
+services:
+  web:
+    build: .
+    container_name: toilet-tracker
+    ports:
+      - "5000:5000"
+    volumes:
+      # persist sqlite file on the host
+      - ./data:/app/data
+    restart: unless-stopped
