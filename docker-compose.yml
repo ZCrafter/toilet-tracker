@@ -5,7 +5,7 @@ services:
     build: .
     container_name: toilet-tracker
     ports:
-      - "5000:5000"
+      - "5001:5001"
     volumes:
       # persist sqlite file on the host
       - ./data:/app/data
