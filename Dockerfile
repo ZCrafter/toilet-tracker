@@ -18,7 +18,7 @@ COPY . .
 RUN mkdir -p /app/data
 
 # Expose Flask port
-EXPOSE 5000
+EXPOSE 5001
 
 # Launch with Gunicorn
-CMD ["gunicorn", "--bind", "0.0.0.0:5000", "app:app"]
+CMD ["gunicorn", "--bind", "0.0.0.0:5001", "app:app"]
