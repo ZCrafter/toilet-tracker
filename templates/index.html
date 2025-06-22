@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Toilet Tracker</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+  <header>
+    <h1>Toilet Tracker</h1>
+    <button id="theme-toggle">🌙</button>
+    <a href="/dashboard" class="dash-link">Dashboard</a>
+  </header>
+
+  <main>
+    <!-- Pee Form -->
+    <section class="form-section pee">
+      <h2>Pee</h2>
+      <input type="datetime-local" id="pee-ts">
+      <select id="pee-loc">
+        <option>Home</option>
+        <option>Work</option>
+        <option>Other</option>
+      </select>
+      <button onclick="submitPee()">Submit</button>
+    </section>
+
+    <!-- Poop Form -->
+    <section class="form-section poop">
+      <h2>Poop</h2>
+      <input type="datetime-local" id="poop-ts">
+      <select id="poop-loc">
+        <option>Home</option>
+        <option>Work</option>
+        <option>Other</option>
+      </select>
+      <button onclick="submitPoop()">Submit</button>
+    </section>
+
+    <!-- Sum Form -->
+    <section class="form-section sum">
+      <h2>Sum</h2>
+      <input type="datetime-local" id="sum-ts">
+      <label><input type="checkbox" id="sum-vr"> VR?</label>
+      <input type="text" id="name1" placeholder="Name 1">
+      <input type="text" id="name2" placeholder="Name 2">
+      <input type="text" id="name3" placeholder="Name 3">
+      <button onclick="submitSum()">Submit</button>
+    </section>
+  </main>
+
+  <script src="/static/js/script.js"></script>
+</body>
+</html>
